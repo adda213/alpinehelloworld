@@ -57,7 +57,7 @@ pipeline {
              }
              steps {   script {
                   sh '''
-                     heroku container: login
+                     docker login --username=king.of.net.adda@gmail.com --password=${HEROKU_API_KEY} registry.heroku.com
                      heroku create $STAGING || echo "project already exist"
                      heroku container:push -a $STAGING web
                      heroku container:release -a $STAGING web
