@@ -47,7 +47,7 @@ pipeline {
                 }
              }
          }
-         stage('push image in staging and deploy it') {
+          stage('push image in staging and deploy it') {
              when {
                          expression { GIT_BRANCH == 'origin/master' }
              }
@@ -65,7 +65,7 @@ pipeline {
                 }
 
          }
-         stage('push image in production and deploy it') {
+          stage('push image in production and deploy it') {
              when {
                          expression { GIT_BRANCH == 'origin/master' }
              }
