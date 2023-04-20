@@ -31,7 +31,7 @@ pipeline {
              steps {
                 script {
                   sh '''
-                     curl http://localhost | grep -q "Hello world!"
+                     curl http://ip10-0-0-3-ch0kmgbl13rgqen6ntg0-80.direct.docker.labs.eazytraining.fr | grep -q "Hello world!"
                   '''  
                 }
              }
