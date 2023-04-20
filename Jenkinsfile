@@ -94,6 +94,7 @@ pipeline {
       failure {
             slackSend (color: '#FF0000', message: "ULRICH - FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
           }  
+  }
 }
 
        
