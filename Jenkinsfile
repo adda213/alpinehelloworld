@@ -11,7 +11,7 @@ pipeline {
              agent any
              steps {
                 script {
-                  sh 'docker build -t adda213/$IMAGE_TAG .  
+                  sh 'docker build -t adda213/$IMAGE_TAG .'  
                 }
              }
          }
