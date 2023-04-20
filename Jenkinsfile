@@ -55,7 +55,7 @@ pipeline {
              environment {
                  HEROKU_API_KEY = credentials('heroku_api_key')
              }
-                script {
+             steps {   script {
                   sh '''
                      heroku container: login
                      heroku create $STAGING || echo "project already exist"
@@ -63,6 +63,7 @@ pipeline {
                      heroku container:release -a $STAGING web
                   '''  
                 }
+             }
 
          }
          stage('push image in production and deploy it') {
@@ -73,7 +74,7 @@ pipeline {
              environment {
                  HEROKU_API_KEY = credentials('heroku_api_key')
              }
-                script {
+             steps {   script {
                   sh '''
                      heroku container: login
                      heroku create $PRODUCTION || echo "project already exist"
@@ -81,6 +82,7 @@ pipeline {
                      heroku container:release -a $PRODUCTION web
                   '''  
                 }
+             }
 
          }
 
