@@ -1,4 +1,4 @@
-@Library(/adda213-share-library')_
+@Library('adda213-share-library')_
 pipeline {
      environment {
        IMAGE_NAME = "alpinehelloworld" 
@@ -12,7 +12,7 @@ pipeline {
              agent any
              steps {
                 script {
-                  sh 'docker build -t adda213 .'  
+                  sh 'docker build -t adda213/$IMAGE_TAG .'  
                 }
              }
          }
